@@ -12,7 +12,6 @@ import javax.annotation.Resource;
 import java.util.Date;
 
 @RestController
-@RequestMapping("/ttl")
 public class SendMsgController {
     private static final Logger log = LoggerFactory.getLogger(SendMsgController.class);
 
@@ -28,7 +27,7 @@ public class SendMsgController {
     }
 
     //开始发消息 消息  ttl
-    @GetMapping("/sendExpirationMsg/{message}/{ttlTime}")
+    @GetMapping("/sendMsg/{message}/{ttlTime}")
     public void sendMsg(@PathVariable String message,@PathVariable String ttlTime){
         log.info("当前时间：{},发送一条时长{}ms TTL消息给队列QC：{}",new Date().toString(),ttlTime,message);
         rabbitTemplate.convertAndSend("X","XC",message,msg->{
