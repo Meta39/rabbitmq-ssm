@@ -7,3 +7,7 @@ spring:
     port: 5672
     username: admin
     password: admin
+    # 默认是禁用发布确认模式none，发布消息成功到交换机后厨触发回调方法correlated
+    publisher-confirm-type: correlated
+    #回退queue队列消息给生产者
+    publisher-returns: true
