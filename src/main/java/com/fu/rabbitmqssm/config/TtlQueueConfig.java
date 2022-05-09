@@ -8,6 +8,9 @@ import org.springframework.context.annotation.Configuration;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 未基于插件的延迟队列（会有问题）
+ */
 @Configuration
 public class TtlQueueConfig {
 

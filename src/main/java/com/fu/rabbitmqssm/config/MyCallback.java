@@ -1,9 +1,7 @@
 package com.fu.rabbitmqssm.config;
 
-import com.fu.rabbitmqssm.consumer.ConfirmConsumer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.ReturnedMessage;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -14,7 +12,7 @@ import javax.annotation.Resource;
 import java.nio.charset.StandardCharsets;
 
 /**
- *
+ *  发布订阅高级  回调
  */
 @Component
 public class MyCallback implements RabbitTemplate.ConfirmCallback,RabbitTemplate.ReturnsCallback {
