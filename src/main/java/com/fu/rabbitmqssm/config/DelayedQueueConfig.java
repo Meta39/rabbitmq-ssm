@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import java.util.HashMap;
 
 /**
- * 基于插件的延迟队列配置
+ * 基于插件的延迟队列配置（需要在服务器安装延迟队列rabbitmq_delayed_message_exchange插件）
  */
 @Configuration
 public class DelayedQueueConfig {
@@ -40,6 +40,7 @@ public class DelayedQueueConfig {
          * 4.是否自动删除
          * 5.其它参数
          */
+        //type=x-delayed-message（需要在服务器安装延迟队列rabbitmq_delayed_message_exchange插件）
         return new CustomExchange(DELAYED_EXCHANGE_NAME,"x-delayed-message",true,false,arguments);
     }
 

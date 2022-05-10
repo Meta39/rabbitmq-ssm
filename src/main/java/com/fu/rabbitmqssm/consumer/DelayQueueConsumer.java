@@ -13,6 +13,7 @@ import java.util.Date;
 
 /**
  * 消费者  基于插件的延迟消息   解决先后时间先后问题
+ * 前提：需要在服务器安装延迟队列rabbitmq_delayed_message_exchange插件
  */
 @Component
 public class DelayQueueConsumer {
